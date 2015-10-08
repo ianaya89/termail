@@ -1,5 +1,7 @@
 var inquirer = require('inquirer');
 var nodemailer = require('nodemailer');
+var colors = require('colors');
+
 require('dotenv').load();
 
 var to = {
@@ -32,13 +34,31 @@ var html = {
   message: 'html ?'
 };
 
-inquirer.prompt([from, to, subject, body, html], function( answers ) {
+var confirm = {
+  type: 'confirm',
+  name: 'confirm',
+  message: 'You are going to send an email, are you sure ?'
+};
+
+
+inquirer.prompt([from, to, subject, body, html], function(answers) {
+
+  if (!answers.confirm) {
+    console.log('Email aborted'.red);
+  }
+
   var opt = {
     from: answers.from,
     to: answers.to,
     subject: answers.subject
   };
 
+  if (answers.html) {
+    opt.html = answers.body;
+  }
+  else {
+    opt.text = answers.body;
+  }
 
   sendEmail(opt);
 });

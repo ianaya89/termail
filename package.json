@@ -13,6 +13,7 @@
   "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.1.2",
     "dotenv": "^1.2.0",
     "inquirer": "^0.10.1",
     "nodemailer": "^1.8.0"
