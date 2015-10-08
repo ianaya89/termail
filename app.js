@@ -40,11 +40,11 @@ var confirm = {
   message: 'You are going to send an email, are you sure ?'
 };
 
-
-inquirer.prompt([from, to, subject, body, html], function(answers) {
+inquirer.prompt([from, to, subject, body, html, confirm], function(answers) {
 
   if (!answers.confirm) {
     console.log('Email aborted'.red);
+    return;
   }
 
   var opt = {
