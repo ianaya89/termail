@@ -60,6 +60,8 @@ inquirer.prompt([from, to, subject, body, html], function(answers) {
     opt.text = answers.body;
   }
 
+  console.log('Sending email...');
+
   sendEmail(opt);
 });
 
@@ -74,9 +76,9 @@ function sendEmail(opt) {
 
   transporter.sendMail(opt, function(error, info){
     if(error){
-      return console.log(error);
+      return console.log(JSON.stringify(error).red);
     }
-    console.log('Message sent: ' + info.response);
 
+    console.log('Email sent succesfully: '.green + info.response);
   });
 }
