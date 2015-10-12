@@ -4,7 +4,7 @@ Node app to send email using terminal.
 
 ## Install
 1. Clone the project.
-2. Run in project directroy: `npm install`
+2. Run in project directroy: `$ npm install`
 
 ## Set up 
 1. Create **.env** file at project root directory.
@@ -17,4 +17,4 @@ Node app to send email using terminal.
   ```
 
 ## Run
-`node app`
+1. Run in terminal: `$ node app`
