@@ -3,10 +3,5 @@ Node app to send email using terminal.
 
 
 ## Install
-TBA
-
-## Set up 
-TBA
-
-## Run
-TBA
+1. Clone the project.
+2. Run in project directroy: `npm install`
